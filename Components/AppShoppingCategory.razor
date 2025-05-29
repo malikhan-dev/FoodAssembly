@@ -1,0 +1,86 @@
+﻿@using FoodAssembly.Models
+<div class="d-flex pe-1 justify-content-center app-category ps-1 flex-wrap w-100" style="z-index:1000000 !important;">
+
+    @foreach (var item in VisibleCategories)
+    {
+        <div class="d-inline-flex p-2 m-md-2 m-lg-2 m-xl-1 m-xxl-1 m-3 category-item border-2 border-dark-subtle">
+           
+
+            <div class="category-item-desc">
+                <p> @item.Name</p>
+
+            </div>
+            <img src="@item.IconUrl" />
+        </div>
+    }
+    <div class="d-inline-flex p-2 m-md-2 m-lg-2 m-xl-1 m-xxl-1 m-3 category-item">
+        @if (scrollToLeft)
+        {
+            <button class="btn w-100" @onclick="Scroll">
+                <i class="fas fa-arrow-left">
+
+                </i>
+            </button>
+        }
+        else
+        {
+            <button class="btn w-100" @onclick="Scroll">
+                <i class="fas fa-arrow-right">
+
+                </i>
+            </button>
+        }
+    </div>
+</div>
+
+
+
+
+
+@code {
+
+    [Parameter]
+    public IEnumerable<CategoryDto> Categories { get; set; }
+
+    private bool scrollToLeft { get; set; } = true;
+
+    private List<CategoryDto> VisibleCategories = new();
+
+
+    private int CategoryBatchSize = 12;
+
+
+    protected override Task OnInitializedAsync()
+    {
+        VisibleCategories = Categories.Take(CategoryBatchSize).ToList();
+
+        return base.OnInitializedAsync();
+    }
+
+    private async Task Scroll()
+    {
+        if (scrollToLeft)
+        {
+            var allItemsCount = Categories.Count();
+
+            var skipCount = (allItemsCount - CategoryBatchSize);
+
+            VisibleCategories = Categories.Skip(skipCount).Take(CategoryBatchSize).ToList();
+
+            scrollToLeft = false;
+        }
+
+        else
+        {
+            VisibleCategories = Categories.Take(CategoryBatchSize).ToList();
+
+            scrollToLeft = true;
+
+        }
+
+
+
+        StateHasChanged();
+    }
+
+}

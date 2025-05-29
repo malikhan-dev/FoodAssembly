@@ -1,0 +1,298 @@
+﻿@page "/"
+@using FoodAssembly.Models
+
+
+
+
+<div class="m-4 p-4 w-100">
+
+    <FoodAssembly.Components.AppFoodCategory FoodCategories="@foodCategories">
+
+    </FoodAssembly.Components.AppFoodCategory>
+
+
+</div>
+
+
+
+
+@* <div class="section" id="table-section">
+    <h2>Sample Data Table</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Country</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Alice Smith</td>
+                <td>30</td>
+                <td>alice@example.com</td>
+                <td>USA</td>
+            </tr>
+            <tr>
+                <td>Bob Johnson</td>
+                <td>45</td>
+                <td>bob@example.com</td>
+                <td>UK</td>
+            </tr>
+            <tr>
+                <td>Claire Lee</td>
+                <td>28</td>
+                <td>claire@example.com</td>
+                <td>Canada</td>
+            </tr>
+            <tr>
+                <td>David Kim</td>
+                <td>35</td>
+                <td>david@example.com</td>
+                <td>South Korea</td>
+            </tr>
+        </tbody>
+    </table>
+    <h1>Welcome to the Large HTML Document</h1>
+    <p>This document contains various HTML elements to demonstrate a large content structure. It includes headings, paragraphs, lists, tables, images, and more.</p>
+
+    <div class="section" id="introduction">
+        <h2>Introduction</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Velit dignissim sodales ut eu sem integer vitae. Curabitur vitae nunc sed velit dignissim sodales ut et.</p>
+    </div>
+
+    <div class="section" id="features">
+        <h2>Features</h2>
+        <ul>
+            <li>Responsive design</li>
+            <li>Cross-browser compatibility</li>
+            <li>Accessible content</li>
+            <li>High performance</li>
+            <li>Rich media support</li>
+        </ul>
+    </div>
+
+    <div class="section" id="detailed-list">
+        <h2>Detailed List</h2>
+        <ol>
+            <li>
+                Item one with subitems
+                <ul>
+                    <li>Subitem 1</li>
+                    <li>Subitem 2</li>
+                </ul>
+            </li>
+            <li>Item two</li>
+            <li>
+                Item three with further details
+                <ol>
+                    <li>Detail 1</li>
+                    <li>Detail 2</li>
+                </ol>
+            </li>
+        </ol>
+    </div>
+
+    <div class="section" id="table-section">
+        <h2>Sample Data Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Alice Smith</td>
+                    <td>30</td>
+                    <td>alice@example.com</td>
+                    <td>USA</td>
+                </tr>
+                <tr>
+                    <td>Bob Johnson</td>
+                    <td>45</td>
+                    <td>bob@example.com</td>
+                    <td>UK</td>
+                </tr>
+                <tr>
+                    <td>Claire Lee</td>
+                    <td>28</td>
+                    <td>claire@example.com</td>
+                    <td>Canada</td>
+                </tr>
+                <tr>
+                    <td>David Kim</td>
+                    <td>35</td>
+                    <td>david@example.com</td>
+                    <td>South Korea</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <h1>Welcome to the Large HTML Document</h1>
+    <p>This document contains various HTML elements to demonstrate a large content structure. It includes headings, paragraphs, lists, tables, images, and more.</p>
+
+    <div class="section" id="introduction">
+        <h2>Introduction</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <p>Phasellus faucibus scelerisque eleifend donec pretium vulputate sapien nec sagittis. Velit dignissim sodales ut eu sem integer vitae. Curabitur vitae nunc sed velit dignissim sodales ut et.</p>
+    </div>
+
+    <div class="section" id="features">
+        <h2>Features</h2>
+        <ul>
+            <li>Responsive design</li>
+            <li>Cross-browser compatibility</li>
+            <li>Accessible content</li>
+            <li>High performance</li>
+            <li>Rich media support</li>
+        </ul>
+    </div>
+
+    <div class="section" id="detailed-list">
+        <h2>Detailed List</h2>
+        <ol>
+            <li>
+                Item one with subitems
+                <ul>
+                    <li>Subitem 1</li>
+                    <li>Subitem 2</li>
+                </ul>
+            </li>
+            <li>Item two</li>
+            <li>
+                Item three with further details
+                <ol>
+                    <li>Detail 1</li>
+                    <li>Detail 2</li>
+                </ol>
+            </li>
+        </ol>
+    </div>
+
+    <div class="section" id="table-section">
+        <h2>Sample Data Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Email</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Alice Smith</td>
+                    <td>30</td>
+                    <td>alice@example.com</td>
+                    <td>USA</td>
+                </tr>
+                <tr>
+                    <td>Bob Johnson</td>
+                    <td>45</td>
+                    <td>bob@example.com</td>
+                    <td>UK</td>
+                </tr>
+                <tr>
+                    <td>Claire Lee</td>
+                    <td>28</td>
+                    <td>claire@example.com</td>
+                    <td>Canada</td>
+                </tr>
+                <tr>
+                    <td>David Kim</td>
+                    <td>35</td>
+                    <td>david@example.com</td>
+                    <td>South Korea</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+ *@
+
+
+
+@code {
+
+    List<FoodCategoryDto> foodCategories = new();
+
+    protected override Task OnInitializedAsync()
+    {
+
+        foodCategories.Add(new FoodCategoryDto()
+        {
+            IconUrl = "/Assets/Icons/FoodCategories/website_image_asian_1.jpg",
+            Name = "بین الملل"
+        });
+
+        foodCategories.Add(new FoodCategoryDto()
+        {
+            IconUrl = "/Assets/Icons/FoodCategories/website_image_burger_1.jpg",
+            Name = "برگر"
+        });
+
+        foodCategories.Add(new FoodCategoryDto()
+        {
+            IconUrl = "/Assets/Icons/FoodCategories/website_image_fastfood_1.jpg",
+            Name = "فست فود"
+        });
+
+        foodCategories.Add(new FoodCategoryDto()
+        {
+            IconUrl = "/Assets/Icons/FoodCategories/website_image_gilani_1.jpg",
+            Name = "گیلانی"
+        });
+
+        foodCategories.Add(new FoodCategoryDto()
+        {
+            IconUrl = "/Assets/Icons/FoodCategories/website_image_irani_1.jpg",
+            Name = "ایرانی"
+        });
+
+        foodCategories.Add(new FoodCategoryDto()
+        {
+            IconUrl = "/Assets/Icons/FoodCategories/website_image_italy_1.jpg",
+            Name = "پاستا"
+        });
+
+        foodCategories.Add(new FoodCategoryDto()
+        {
+            IconUrl = "/Assets/Icons/FoodCategories/website_image_kebab_1.jpg",
+            Name = "کباب"
+        });
+
+        foodCategories.Add(new FoodCategoryDto()
+        {
+            IconUrl = "/Assets/Icons/FoodCategories/website_image_pizza_1.jpg",
+            Name = "پیتزا"
+        });
+        foodCategories.Add(new FoodCategoryDto()
+        {
+            IconUrl = "/Assets/Icons/FoodCategories/website_image_sandwich_1.jpg",
+            Name = "ساندویچ"
+        });
+
+        foodCategories.Add(new FoodCategoryDto()
+        {
+            IconUrl = "/Assets/Icons/FoodCategories/website_image_seafood_1.jpg",
+            Name = "دریایی"
+        });
+
+
+        foodCategories.Add(new FoodCategoryDto()
+        {
+            IconUrl = "/Assets/Icons/FoodCategories/website_image_sokhari_1.jpg",
+            Name = "سخاری"
+        });
+
+        return Task.CompletedTask;
+
+    }
+}

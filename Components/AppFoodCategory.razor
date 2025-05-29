@@ -1,0 +1,30 @@
+﻿@using FoodAssembly.Models
+<h4>دسته بندی</h4>
+
+
+<div class="d-flex flex-wrap">
+    @{
+        if(FoodCategories != null)
+        {
+            foreach (var fc in FoodCategories)
+            {
+                <div class="d-inline-flex p-2 m-2" >
+                    <div class=" food-category-item border-2" style="background-size:cover;background-position: center;background-repeat: no-repeat;background-image:url(@(fc.IconUrl))">
+                        <div class="food-category-item-desc bg-white">
+                            <span> @fc.Name </span> <i class=" fa-solid fa-chevron-left"></i>
+                        </div>
+                    </div>
+                </div>
+  
+            }
+        }
+       
+    }
+</div>
+
+
+@code {
+    [Parameter]
+    public List<FoodCategoryDto>? FoodCategories { get; set; }
+
+}

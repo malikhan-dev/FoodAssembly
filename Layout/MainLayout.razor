@@ -1,0 +1,117 @@
+﻿@using FoodAssembly.Components
+@using FoodAssembly.Models
+@inherits LayoutComponentBase
+<div class="page">
+    <main>
+        <article>
+            <div class="w-100" style="position:sticky;top:0;z-index:1000000 !important;background-color:#FFFFFF">
+                <FoodAssembly.Components.AppTopBar>
+
+                </FoodAssembly.Components.AppTopBar>
+            </div>
+
+            <div>
+                <AppShoppingCategory Categories="@Categories">
+
+                </AppShoppingCategory>
+            </div>
+
+            <div class="m-4 p-4 m-auto w-80">
+                @Body
+            </div>
+
+        </article>
+    </main>
+</div>
+
+@code {
+
+    private List<CategoryDto> Categories = new();
+
+    protected override Task OnInitializedAsync()
+    {
+        Categories.Add(new CategoryDto()
+        {
+            IconUrl = "/Assets/Icons/supermarket-desktop.png",
+            Name = "سوپر مارکت"
+        });
+
+        Categories.Add(new CategoryDto()
+        {
+            IconUrl = "/Assets/Icons/restaurant-desktop.png",
+            Name = "رستوران"
+        });
+
+        Categories.Add(new CategoryDto()
+        {
+            IconUrl = "/Assets/Icons/protein-desktop.png",
+            Name = "پروتئین"
+        });
+
+        Categories.Add(new CategoryDto()
+        {
+            IconUrl = "/Assets/Icons/organics_desktop_psa.png",
+            Name = "گل و گیاه"
+        });
+
+        Categories.Add(new CategoryDto()
+        {
+            IconUrl = "/Assets/Icons/icecream-desktop.png",
+            Name = "بستنی"
+        });
+
+        Categories.Add(new CategoryDto()
+        {
+            IconUrl = "/Assets/Icons/fruit-desktop.png",
+            Name = "میوه"
+        });
+        Categories.Add(new CategoryDto()
+        {
+            IconUrl = "/Assets/Icons/flower-desktop.png",
+            Name = "گل"
+        });
+        Categories.Add(new CategoryDto()
+        {
+            IconUrl = "/Assets/Icons/dairy-desktop.png",
+            Name = "لبنیات"
+        });
+        Categories.Add(new CategoryDto()
+        {
+            IconUrl = "/Assets/Icons/confectionary-desktop.png",
+            Name = "شیرینی"
+        });
+        Categories.Add(new CategoryDto()
+        {
+            IconUrl = "/Assets/Icons/cafe-desktop.png",
+            Name = "کافه"
+        });
+        Categories.Add(new CategoryDto()
+        {
+            IconUrl = "/Assets/Icons/coffe-desktop.png",
+            Name = "قهوه و شکلات"
+        });
+        Categories.Add(new CategoryDto()
+        {
+            IconUrl = "/Assets/Icons/bread-desktop.png",
+            Name = "نان"
+        });
+        Categories.Add(new CategoryDto()
+        {
+            IconUrl = "/Assets/Icons/beauti-desktop.png",
+            Name = "زیبایی"
+        });
+        Categories.Add(new CategoryDto()
+        {
+            IconUrl = "/Assets/Icons/attari-desktop.png",
+            Name = "عطاری"
+        });
+        Categories.Add(new CategoryDto()
+        {
+            IconUrl = "/Assets/Icons/other-desktop.png",
+            Name = "سایر"
+        });
+
+
+        return base.OnInitializedAsync();
+    }
+}

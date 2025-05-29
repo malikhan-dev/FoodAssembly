@@ -1,0 +1,30 @@
+﻿.theme-bg {
+    background-color: rgb(255, 0, 166)
+}
+
+@font-face {
+    font-family: primary-font;
+    src: url(../Assets/fonts/IRANSansWeb.woff2);
+}
+
+.clr-white{
+    color:white;
+}
+
+.color-d-pink {
+    color: deeppink;
+}
+input::placeholder {
+    color: #A6AAAD !important
+}
+input.form-control:focus {
+    border-color: #A6AAAD;
+    box-shadow: inherit;
+}
+
+.category-item:hover {
+    opacity: 0.6;
+    transform: scale(1,1);
+    font-size: 14px;
+    background-color: rgb(255, 0, 166);
+}

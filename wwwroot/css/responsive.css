@@ -1,0 +1,55 @@
+﻿
+@media (max-width:1600px) {
+    .category-item {
+        height: 90px;
+        width: 90px;
+    }
+
+    .category-item-desc p {
+        width: 85px;
+        font-size: 10px;
+        margin-top: 65px;
+    }
+
+    .food-category-item {
+        height: 90px;
+        width: 90px;
+    }
+
+    .food-category-item-desc {
+        width: 65px;
+        font-size: 10px;
+        margin-top: 70px;
+        min-width: 65px;
+    }
+}
+
+@media(max-width:1280px) {
+    .app-top-bar, .address-desc {
+        max-height: 70px;
+    }
+
+    .app-sign-in-cnt {
+        display: none
+    }
+
+    .address-desc {
+        min-width: 150px;
+    }
+
+    .app-sign-in-cnt-responsive {
+        display: initial;
+    }
+
+    .app-search-cnt {
+        display: none !important;
+    }
+
+    .w-max-responsive {
+        width: 100% !important;
+    }
+
+    .app-addr-responsive {
+        width: 50% !important;
+    }
+}
