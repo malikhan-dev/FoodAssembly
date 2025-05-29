@@ -2,7 +2,7 @@
 {
     public abstract class BaseCategoryDto
     {
-        public string Name { get; set; }
-        public string IconUrl { get; set; }
+        public required string Name { get; set; }
+        public required string IconUrl { get; set; }
     }
 }
