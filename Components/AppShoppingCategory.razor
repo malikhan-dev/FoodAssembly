@@ -1,49 +1,51 @@
 ﻿@using FoodAssembly.Models
-<div class="d-flex pe-1 justify-content-center app-category ps-1 flex-wrap w-100" style="z-index:1000000 !important;">
+@using FoodAssembly.Utilities
 
-    @foreach (var item in VisibleCategories)
-    {
-        <div class="d-inline-flex p-2 m-md-2 m-lg-2 m-xl-1 m-xxl-1 m-3 category-item border-2 border-dark-subtle">
-            <div class="category-item-desc">
-                <p> @item.Name</p>
+<div class="d-flex pe-1 justify-content-center app-category ps-1 flex-wrap w-100">
+    @{
+        if (Categories.NotNull())
+        {
+            @foreach (var item in VisibleCategories)
+            {
+                <div class="d-inline-flex p-2 m-md-2 m-lg-2 m-xl-1 m-xxl-1 m-3 category-item border-2 border-dark-subtle">
+                    <div class="category-item-desc">
+                        <p> @item.Name</p>
+
+                    </div>
+                    <img src="@item.IconUrl" />
+                </div>
+            }
+            <div class="row w-100">
+                @if (scrollToLeft)
+                {
+                    <button class="p-4 shop-scroll mt-2 btn btn-lg" @onclick="Scroll">
+                        <i class="fas fa-arrow-left">
+
+                        </i>
+                    </button>
+                }
+                else
+                {
+                    <button class="p-4 shop-scroll mt-2 btn btn-lg" @onclick="Scroll">
+                        <i class="fas fa-arrow-right">
+
+                        </i>
+                    </button>
+                }
 
             </div>
-            <img src="@item.IconUrl" />
-        </div>
+
+        }
     }
-    <div class="row w-100">
-
-
-        @if (scrollToLeft)
-        {
-            <button class="p-4 shop-scroll mt-2 btn btn-lg" @onclick="Scroll">
-                <i class="fas fa-arrow-left">
-
-                </i>
-            </button>
-        }
-        else
-        {
-            <button class="p-4 shop-scroll mt-2 btn btn-lg" @onclick="Scroll">
-                <i class="fas fa-arrow-right">
-
-                </i>
-            </button>
-        }
-
-
-    </div>
 
 </div>
 
 
 
 
-
 @code {
-
     [Parameter]
-    public IEnumerable<CategoryDto> Categories { get; set; }
+    public required List<CategoryDto> Categories { get; set; }
 
     private bool scrollToLeft { get; set; } = true;
 
@@ -55,35 +57,45 @@
 
     protected override Task OnInitializedAsync()
     {
-        VisibleCategories = Categories.Take(CategoryBatchSize).ToList();
+        if (Categories.NotNull())
+        {
+            VisibleCategories = Categories.Take(CategoryBatchSize).ToList();
+
+        }
 
         return base.OnInitializedAsync();
     }
 
-    private async Task Scroll()
+    private Task Scroll()
     {
-        if (scrollToLeft)
+        if (Categories.NotNull())
         {
-            var allItemsCount = Categories.Count();
+            if (scrollToLeft)
+            {
+                var allItemsCount = Categories.Count();
 
-            var skipCount = (allItemsCount - CategoryBatchSize);
+                var skipCount = (allItemsCount - CategoryBatchSize);
 
-            VisibleCategories = Categories.Skip(skipCount).Take(CategoryBatchSize).ToList();
+                VisibleCategories = Categories.Skip(skipCount).Take(CategoryBatchSize).ToList();
 
-            scrollToLeft = false;
+                scrollToLeft = false;
+            }
+
+            else
+            {
+                VisibleCategories = Categories.Take(CategoryBatchSize).ToList();
+
+                scrollToLeft = true;
+
+            }
+
+
+
+            StateHasChanged();
         }
 
-        else
-        {
-            VisibleCategories = Categories.Take(CategoryBatchSize).ToList();
 
-            scrollToLeft = true;
-
-        }
-
-
-
-        StateHasChanged();
+        return Task.CompletedTask;
     }
 
 }
