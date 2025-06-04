@@ -4,8 +4,6 @@
     @foreach (var item in VisibleCategories)
     {
         <div class="d-inline-flex p-2 m-md-2 m-lg-2 m-xl-1 m-xxl-1 m-3 category-item border-2 border-dark-subtle">
-           
-
             <div class="category-item-desc">
                 <p> @item.Name</p>
 
@@ -13,10 +11,12 @@
             <img src="@item.IconUrl" />
         </div>
     }
-    <div class="d-inline-flex p-2 m-md-2 m-lg-2 m-xl-1 m-xxl-1 m-3 category-item">
+    <div class="row w-100">
+
+
         @if (scrollToLeft)
         {
-            <button class="btn w-100" @onclick="Scroll">
+            <button class="p-4 shop-scroll mt-2 btn btn-lg" @onclick="Scroll">
                 <i class="fas fa-arrow-left">
 
                 </i>
@@ -24,13 +24,16 @@
         }
         else
         {
-            <button class="btn w-100" @onclick="Scroll">
+            <button class="p-4 shop-scroll mt-2 btn btn-lg" @onclick="Scroll">
                 <i class="fas fa-arrow-right">
 
                 </i>
             </button>
         }
+
+
     </div>
+
 </div>
 
 
