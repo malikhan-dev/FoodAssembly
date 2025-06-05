@@ -194,3 +194,13 @@ body {
 }
 
 
+.food-event {
+    background-color: #E32992;
+    min-height: 350px;
+    border-bottom-right-radius: 120px;
+    color: white;
+}
+.food-event-section {
+    width: 230px;
+    height: 320px;
+}

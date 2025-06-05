@@ -1,0 +1,92 @@
+﻿@using FoodAssembly.Models
+@using System.Timers
+@using FoodAssembly.Utilities
+
+<div class="w-100 food-event">
+    <div class="d-flex pe-1 flex-row ps-1 h-100 w-100">
+
+        <div class="d-inline-flex p-2 m-md-2 m-lg-2 m-xl-1 m-xxl-1 m-3 border-2 food-event-section">
+
+            <div class="d-flex pe-1 flex-column ps-1">
+
+                <div class="d-inline-flex mt-5 border-2 food-event-section justify-content-center">
+                    <span style="font-size:20px;font-weight:bold">
+                        @EndsAt
+                        <i class="fas fa-clock"></i>
+                    </span>
+                </div>
+
+                <div class="d-inline-flex justify-content-center border-2 food-event-section">
+                    <img style="height: 110px;width: 110px;" src="/Assets/Foods/FoodAssemblyParty.png" />
+                </div>
+               
+                <div class="d-inline-flex p-2 m-md-2 m-lg-2 m-xl-1 m-xxl-1 m-3 border-2 food-event-section">
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="d-inline-flex p-2 bg-white m-2 ms-2 me-2 mt-2 mb-2 border-2 food-event-section ">
+        </div>
+
+        <div class="d-inline-flex p-2 bg-white m-2 ms-2 me-2 mt-2 mb-2 border-2 food-event-section ">
+        </div>
+
+        <div class="d-inline-flex p-2 bg-white m-2 ms-2 me-2 mt-2 mb-2 border-2 food-event-section ">
+        </div>
+
+        <div class="d-inline-flex p-2 bg-white m-2 ms-2 me-2 mt-2 mb-2 border-2 food-event-section ">
+        </div>
+
+        <div class="d-inline-flex p-2 bg-white m-2 ms-2 me-2 mt-2 mb-2 border-2 food-event-section ">
+        </div>
+    </div>
+</div>
+
+
+
+@code {
+
+    [Parameter]
+    public required FoodEvent EventData { get; set; }
+
+    private string EndsAt { get; set; } = "";
+
+    protected override Task OnInitializedAsync()
+    {
+        var currentDate = DateTime.Now;
+
+        var eventExpiryDate = EventData.EndAt;
+
+        var Timer = new System.Timers.Timer(1000);
+
+        Timer.Elapsed += TimerElapsed;
+
+        Timer.Enabled = true;
+
+        Timer.AutoReset = true;
+
+        Timer.Start();
+
+        return base.OnInitializedAsync();
+    }
+
+    private void TimerElapsed(object? sender, ElapsedEventArgs e)
+    {
+        if (EventData.EndAt > DateTime.Now)
+        {
+
+            EndsAt = DateHelper.CalculateDiff(EventData.EndAt);
+
+            this.StateHasChanged();
+        }
+        else
+        {
+            //no display
+        }
+
+
+    }
+
+}

@@ -10,18 +10,90 @@
 
     </FoodAssembly.Components.AppFoodCategory>
 
+</div>
 
+<div class="m-4 p-4 w-100">
+    <FoodAssembly.Components.AppFoodEvent EventData="@foodEvents">
+
+    </FoodAssembly.Components.AppFoodEvent>
 </div>
 
 
-
-
 @code {
+
+
+
+    FoodEvent foodEvents = new();
+
 
     List<FoodCategoryDto> foodCategories = new();
 
     protected override Task OnInitializedAsync()
     {
+
+
+        foodEvents = new FoodEvent();
+
+        foodEvents.EndAt = DateTime.Now.AddHours(5);
+
+        foodEvents.EventTitle = "پارتی فود اسمبلی";
+
+        foodEvents.EventDescription = "از تخفیف های هیجان انگیز لذت ببرید";
+
+        foodEvents.IconUrl = "/Assets/Foods/FoodAssemblyParty.png";
+
+        foodEvents.Items = new List<EventItems>()
+        {
+            new EventItems()
+            {
+                DeliveryPrice = 26000,
+                DiscountPercent = 20,
+                FoodName = "چکدرمه با مرغ از چلئپز",
+                VendorName = "چلوپز (فلسطین)",
+                Remaining = 7,
+                Price = 296700,
+                PriceWithDiscount = 237360,
+                ImageUrl ="/Assets/Foods/6822d0c28989d.jpeg"
+
+            },
+            new EventItems()
+            {
+                DeliveryPrice = 25000,
+                DiscountPercent = 20,
+                FoodName = "زرشک پلو با مرغ",
+                VendorName = "چلوپز (فلسطین)",
+                Remaining = 7,
+                Price = 300000,
+                PriceWithDiscount = 275000,
+                ImageUrl ="/Assets/Foods/66e57e6e00961.jpeg"
+
+            },
+              new EventItems()
+            {
+                DeliveryPrice = 25000,
+                DiscountPercent = 20,
+                FoodName = "قرمه سبزی",
+                VendorName = "چلوپز (فلسطین)",
+                Remaining = 7,
+                Price = 300000,
+                PriceWithDiscount = 275000,
+                ImageUrl ="/Assets/Foods/5eba3da5cfef3.jpg"
+
+            },
+            new EventItems()
+            {
+                DeliveryPrice = 25000,
+                DiscountPercent = 20,
+                FoodName = "استرامبولی",
+                VendorName = "فست فود شیلا",
+                Remaining = 7,
+                Price = 300000,
+                PriceWithDiscount = 275000,
+                ImageUrl ="/Assets/Foods/64d75cb8723e9.jpg"
+
+            }
+        };
+
 
         foodCategories.Add(new FoodCategoryDto()
         {
