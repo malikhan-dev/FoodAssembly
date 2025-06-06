@@ -27,8 +27,7 @@ input.form-control:focus {
 .category-item:hover {
     opacity: 0.6;
     transform: scale(1,1);
-    font-size: 14px;
-    background-color: rgb(255, 0, 166);
+
 }
 
 .shop-scroll {

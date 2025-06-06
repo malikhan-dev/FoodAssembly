@@ -4,40 +4,47 @@
 
 <div class="food-event pe-1 ps-1">
 
-        <div class="border-2 food-event-section">
+    <div class="border-2 food-event-section">
 
-            <div class="d-flex pe-1 flex-column ps-1">
+        <div class="d-flex pe-1 flex-column ps-1">
 
-                <div class="d-inline-flex mt-5 border-2 food-event-section justify-content-center">
-                    <span style="font-size:20px;font-weight:bold">
-                        @EndsAt
-                        <i class="fas fa-clock"></i>
-                    </span>
-                </div>
+            <div class="d-inline-flex mt-5 border-2 food-event-section justify-content-center">
+                <span style="font-size:20px;font-weight:bold">
+                    @EndsAt
+                    <i class="fas fa-clock"></i>
+                </span>
+            </div>
 
-                <div class="d-inline-flex justify-content-center border-2 food-event-section">
-                    <img style="height: 110px;width: 110px;" src="/Assets/Foods/FoodAssemblyParty.png" />
-                </div>
-               
-                <div class="d-inline-flex border-2 food-event-section">
-                </div>
+            <div class="d-inline-flex justify-content-center border-2 food-event-section">
+                <img style="height: 110px;width: 110px;" src="/Assets/Foods/FoodAssemblyParty.png" />
+            </div>
+
+            <div class="d-inline-flex border-2 food-event-section justify-content-center">
+                <h4>
+                    @EventData.EventTitle
+
+                </h4>
+            </div>
+
+            <div class="me-5 ms-5">
+                <p >@EventData.EventDescription</p>
 
             </div>
 
         </div>
 
-        <div class=" p-2 bg-white m-2 ms-2 me-2 mt-2 mb-2 border-2 food-event-section ">
-        </div>
-
-        <div class=" p-2 bg-white m-2 ms-2 me-2 mt-2 mb-2 border-2 food-event-section ">
-        </div>
-
-        <div class=" p-2 bg-white m-2 ms-2 me-2 mt-2 mb-2 border-2 food-event-section ">
-        </div>
-
-        <div class=" p-2 bg-white m-2 ms-2 me-2 mt-2 mb-2 border-2 food-event-section ">
-        </div>
     </div>
+
+    @foreach(var food in EventData.Items)
+    {
+        <div class=" p-2 bg-white m-2 ms-2 me-2 mt-2 mb-2 border-2 food-event-section justify-content-center " style="background-size:cover;background-position: center;background-repeat: no-repeat; background-image:url(@food.ImageUrl)">
+            @food.FoodName
+        </div>
+    }
+
+  
+
+</div>
 
 
 
