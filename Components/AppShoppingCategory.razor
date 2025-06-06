@@ -1,43 +1,37 @@
 ﻿@using FoodAssembly.Models
 @using FoodAssembly.Utilities
+<div class="d-flex pe-1 justify-content-center app-category ps-1 flex-wrap w-100" style="z-index:1000000 !important;">
 
-<div class="d-flex pe-1 justify-content-center app-category ps-1 flex-wrap w-100">
-    @{
-        if (Categories.NotNull())
-        {
-            @foreach (var item in VisibleCategories)
-            {
-                <div class="d-inline-flex p-2 m-md-2 m-lg-2 m-xl-1 m-xxl-1 m-3 category-item border-2 border-dark-subtle">
-                    <div class="category-item-desc">
-                        <p> @item.Name</p>
+    @foreach (var item in VisibleCategories)
+    {
+        <div class="d-inline-flex p-2 m-md-2 m-lg-2 m-xl-1 m-xxl-1 m-3 category-item border-2 border-dark-subtle">
 
-                    </div>
-                    <img src="@item.IconUrl" />
-                </div>
-            }
-            <div class="row w-100">
-                @if (scrollToLeft)
-                {
-                    <button class="p-4 shop-scroll mt-2 btn btn-lg" @onclick="Scroll">
-                        <i class="fas fa-arrow-left">
 
-                        </i>
-                    </button>
-                }
-                else
-                {
-                    <button class="p-4 shop-scroll mt-2 btn btn-lg" @onclick="Scroll">
-                        <i class="fas fa-arrow-right">
-
-                        </i>
-                    </button>
-                }
+            <div class="category-item-desc">
+                <p> @item.Name</p>
 
             </div>
-
-        }
+            <img src="@item.IconUrl" />
+        </div>
     }
+    <div class="d-inline-flex p-2 m-md-2 m-lg-2 m-xl-1 m-xxl-1 m-3 category-item">
+        @if (scrollToLeft)
+        {
+            <button class="btn w-100" @onclick="Scroll">
+                <i class="fas fa-arrow-left">
 
+                </i>
+            </button>
+        }
+        else
+        {
+            <button class="btn w-100" @onclick="Scroll">
+                <i class="fas fa-arrow-right">
+
+                </i>
+            </button>
+        }
+    </div>
 </div>
 
 

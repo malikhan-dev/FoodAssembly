@@ -199,8 +199,12 @@ body {
     min-height: 350px;
     border-bottom-right-radius: 120px;
     color: white;
+    display:flex;
+    flex-direction:row;
 }
+
 .food-event-section {
+    display: inline-flex;
     width: 230px;
     height: 320px;
 }

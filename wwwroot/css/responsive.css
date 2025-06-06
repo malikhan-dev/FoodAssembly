@@ -52,4 +52,19 @@
     .app-addr-responsive {
         width: 50% !important;
     }
+
+    .food-event {
+        background-color: #E32992;
+        border-bottom-right-radius: 120px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .food-event-section {
+        display: inline-flex;
+        
+    }
+
 }
